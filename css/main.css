@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #dd2476;
+  --primary-light: #dd3c84;
+  --primary-dark: #ca1868;
+  --secondary: #ff512f;
+  --secondary-light: #f5694d;
+  --secondary-dark: #ff421c;
+  --ternary: #110630;
+  --dark: #10131c;
+  --light: #fff;
+}
+
+html {
+  overflow-x: hidden;
+}
+.overflow-hidden-html {
+  overflow: hidden;
+}
+
+/* custom scroll style  */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold;
+}
+h1 {
+  @apply text-3xl sm:text-4xl md:text-5xl xxl:text-6xl;
+}
+h2 {
+  @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
+}
+h3 {
+  @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl;
+}
+h4 {
+  @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
+}
+h5 {
+  @apply md:text-lg xxl:text-xl;
+}
+
+.sidebar-active {
+  @apply bg-white w-10/12 p-2 rounded-full text-black text-center;
+}
+
+.after-line {
+  @apply relative;
+}
+.after-line-center {
+  @apply relative;
+}
+.after-line::after {
+  content: " ";
+  @apply absolute -bottom-3 left-0 w-24 h-1 bg-primary;
+}
+.after-line-center::after {
+  content: " ";
+  @apply absolute -bottom-3 left-[50%] -translate-x-[50%] w-24 h-1 bg-primary;
+}
+
+.speaker-card:hover .speaker-card-image {
+  @apply opacity-50;
+}
+.speaker-card:hover .speaker-card-body {
+  @apply bg-gradient-to-tr from-secondary to-primary text-white;
+}
+.speaker-card:hover .speaker-card-body-arrow {
+  @apply bg-gradient-to-tr from-secondary to-primary;
+}
+.speaker-card:hover .speaker-card-border-bottom {
+  @apply bg-white;
+}
+
+.speaker-card-body {
+}
+
+.speaker-card-body-arrow {
+}
+
+.speaker-card-body-icons {
+}
+
+/* button hovers  */
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+.pulse-white:hover,
+.pulse-white:focus {
+  -webkit-animation: pulse-white 1s;
+  animation: pulse-white 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+@-webkit-keyframes pulse-white {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover-white);
+  }
+}
+
+@keyframes pulse-white {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover-white);
+  }
+}
+
+.pulse {
+  --color: var(--primary);
+  --hover: var(--secondary);
+}
+.pulse-white {
+  --hover-white: var(--light);
+}

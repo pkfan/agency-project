@@ -1,0 +1,2156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pkfan</title>
+  </head>
+  <body class="relative debug-screens bg-slate-200 overflow-x-hidden">
+
+    <div id="pkfan-model" class="fixed top-0 left-0 z-50 scale-0 origin-top transition-all duration-300 bg-black/80 w-screen h-screen flex justify-center items-center">
+      <div class="relative  max-w-xl m-16 p-16 space-y-8 bg-white shadow-xl shadow-gray-500">
+      
+        <div id="pkfan-close" class="cursor-pointer absolute right-4 top-4 w-8 h-8" >
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M464 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zm-83.6 290.5c4.8 4.8 4.8 12.6 0 17.4l-40.5 40.5c-4.8 4.8-12.6 4.8-17.4 0L256 313.3l-66.5 67.1c-4.8 4.8-12.6 4.8-17.4 0l-40.5-40.5c-4.8-4.8-4.8-12.6 0-17.4l67.1-66.5-67.1-66.5c-4.8-4.8-4.8-12.6 0-17.4l40.5-40.5c4.8-4.8 12.6-4.8 17.4 0l66.5 67.1 66.5-67.1c4.8-4.8 12.6-4.8 17.4 0l40.5 40.5c4.8 4.8 4.8 12.6 0 17.4L313.3 256l67.1 66.5z"></path></svg>
+        </div>
+        <h5>Do you want to build something amazing, I can help?</h5>
+        <a
+                  href="https://www.fiverr.com/pkfan_amir"
+                  class="pulse w-56 block cursor-pointer text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300 uppercase"
+                >
+                  Hire me on fiverr
+                </a>
+      </div>
+    </div>
+
+    <!-- theme colors js  -->
+    <div
+      class="fixed bottom-4 right-8 z-50 border-2 border-black p-3 bg-white/30 rounded-md "
+    >
+    <div class="flex justify-center items-center space-x-3">
+
+      <form action="http://amir.com" id="change-form">
+        <input id="change-color1" type="text" class=" w-20 h-4 py-4 bg-black text-white" placeholder="#000000" aria-label="none" />
+        <input id="change-color2" type="text" class=" w-20 h-4 py-4 bg-black text-white" placeholder="#fffeee" aria-label="none" />
+        <button type="submit" id="change-button" class=" bg-white p-1 rounded-md hover:opacity-80" >Change</button>
+      </form>
+      
+    </div>
+    <div class="flex justify-between items-center space-x-3">
+
+      <h6 class="uppercase">Change color</h6>
+      <div
+        id="red-theme"
+        class="h-9 w-9 bg-red-400 hover:bg-red-500 rounded-full cursor-pointer"
+      ></div>
+      <div
+        id="blue-theme"
+        class="h-9 w-9 bg-blue-400 hover:bg-blue-500 rounded-full cursor-pointer"
+      ></div>
+      <div
+        id="green-theme"
+        class="h-9 w-9 bg-green-400 hover:bg-blue-500 rounded-full cursor-pointer"
+      ></div>
+    </div>
+    </div>
+
+    <!-- body overlay  -->
+    <div
+      id="body-overlay-dark"
+      class="hidden w-screen h-screen fixed top-0 left-0 z-50 bg-black opacity-95"
+    ></div>
+    <!-- mobile menu sidebar  -->
+    <div
+      id="sidebar"
+      class="w-80 h-full overflow-y-auto fixed -left-[330px] transition-all duration-300 ease-in-out top-0 z-50 flex flex-col justify-between items-center text-white bg-gradient-to-t from-primary to-secondary border-r-4 border-gray-200 shadow-xl shadow-white"
+    >
+      <!-- close icon  -->
+      <div
+        id="close-sidebar"
+        class="fixed -left-[310px] z-50 top-4 transition-all duration-1000 ease-in-out"
+      >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          stroke-width="0"
+          viewBox="0 0 16 16"
+          height="28px"
+          width="28px"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+          ></path>
+        </svg>
+      </div>
+      <ul
+        class="w-full uppercase flex flex-col items-center justify-center font-bold space-y-6 pt-16"
+      >
+        <li class="sidebar-active">
+          <a href="#">Home</a>
+        </li>
+        <li>
+          <a href="#">about</a>
+        </li>
+        <li>
+          <a href="#">features</a>
+        </li>
+        <li>
+          <a href="#">gallary</a>
+        </li>
+        <li>
+          <a href="#">testimonial</a>
+        </li>
+        <li>
+          <a href="#">pricing</a>
+        </li>
+        <li>
+          <a href="#">blog</a>
+        </li>
+        <li>
+          <a href="#">contact</a>
+        </li>
+      </ul>
+      <!-- social icons -->
+      <div class="flex items-center space-x-3 text-primary py-8">
+        <!-- facebook -->
+        <a
+          href="#"
+          class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+        >
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 320 512"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+            ></path>
+          </svg>
+        </a>
+        <!-- twitter -->
+        <a
+          href="#"
+          class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+        >
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+            ></path>
+          </svg>
+        </a>
+        <!-- vimeo -->
+        <a
+          href="#"
+          class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+        >
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"
+            ></path>
+          </svg>
+        </a>
+        <!-- youtube -->
+        <a
+          href="#"
+          class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+        >
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 1024 1024"
+            height="1em"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <header>
+      <section class="text-white bg-gradient-to-tr from-secondary to-primary">
+        <div class="max-w-7xl mx-auto p-4 flex justify-between items-center">
+          <!-- mobile menu icon  -->
+          <div id="sidebar-icon" class="cursor-pointer md:hidden">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              version="1.1"
+              viewBox="0 0 17 17"
+              height="24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g></g>
+              <path
+                d="M16 2v2h-11v-2h11zM5 9h11v-2h-11v2zM5 14h11v-2h-11v2zM2 2c-0.552 0-1 0.447-1 1s0.448 1 1 1 1-0.447 1-1-0.448-1-1-1zM2 7c-0.552 0-1 0.447-1 1s0.448 1 1 1 1-0.447 1-1-0.448-1-1-1zM2 12c-0.552 0-1 0.447-1 1s0.448 1 1 1 1-0.447 1-1-0.448-1-1-1z"
+              ></path>
+            </svg>
+          </div>
+
+          <!-- logo -->
+          <div class="flex h-12">
+            <img src="/assets/logo.svg" alt="" />
+          </div>
+
+          <!-- social icons -->
+          <div class="hidden md:flex items-center space-x-3 text-primary">
+            <!-- facebook -->
+            <a
+              href="#"
+              class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 320 512"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                ></path>
+              </svg>
+            </a>
+            <!-- twitter -->
+            <a
+              href="#"
+              class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                ></path>
+              </svg>
+            </a>
+            <!-- vimeo -->
+            <a
+              href="#"
+              class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 16 16"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"
+                ></path>
+              </svg>
+            </a>
+            <!-- youtube -->
+            <a
+              href="#"
+              class="rounded-full w-8 h-8 bg-white flex justify-center items-center hover:-translate-y-1 transition-all duration-300"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- register -->
+          <a
+            href="#"
+            class="uppercase bg-black py-2 px-4 sm:px-12 sm:py-3 rounded-full rounded-tr-none bg-no-repeat bg-contain hover:-translate-y-1 transition-all duration-300"
+            style="background-image: url(/assets/nav-button-clip.png)"
+            >register</a
+          >
+        </div>
+      </section>
+      <nav class="hidden md:block p-3 bg-white">
+        <ul
+          class="uppercase flex items-center justify-center space-x-6 font-bold"
+        >
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">Home</a>
+          </li>
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">about</a>
+          </li>
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">features</a>
+          </li>
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">gallary</a>
+          </li>
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">testimonial</a>
+          </li>
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">pricing</a>
+          </li>
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">blog</a>
+          </li>
+          <li class="hover:text-primary transition-all duration-300">
+            <a href="#">contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- hero section  -->
+    <section
+      class="relative z-10 w-full h-[400px] xl:h-[550px] xxl:h-[650px] bg-gray-500 bg-no-repeat bg-cover text-white"
+      style="background-image: url(/assets/hero-1280x650.webp)"
+    >
+      <div
+        data-aos="slide-down"
+        data-aos-offset="200"
+        data-aos-delay="0"
+        data-aos-duration="400"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+        class="max-w-7xl mx-auto w-full h-full p-4 uppercase flex flex-col justify-center items-center space-y-4"
+      >
+        <p data-aos="fade-in">A MEETUP AND CONFERENCE BY</p>
+        <h1 data-aos="fade-in" class="pb-4">ONLINE COMUNITY</h1>
+        <a
+          href="#"
+          class="pulse bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-4 px-10 rounded-full font-bold active:-translate-y-1 transition-all duration-300"
+        >
+          BUY TICKET NOW
+        </a>
+      </div>
+      <!-- layout gray  -->
+      <div
+        class="absolute top-0 left-0 -z-10 w-full h-full bg-black opacity-90"
+      ></div>
+
+      <!-- count down timer -->
+      <div
+        id="count-down-timer"
+        class="absolute -bottom-8 sm:-bottom-12 left-[50%] -translate-x-[50%] w-full flex justify-center items-center flex-wrap sm:flex-nowrap text-sm font-bold uppercase space-y-2 sm:space-y-0 space-x-2 sm:space-x-12"
+      >
+        <div
+          class="w-20 h-16 sm:w-24 sm:h-24 flex flex-col justify-center items-center border-[3px] border-white rounded-tl-2xl rounded-br-2xl bg-black bg-no-repeat bg-cover overflow-hidden"
+          style="background-image: url(/assets/nav-button-clip.png)"
+        >
+          <span>days</span>
+          <h4 id="days">20</h4>
+        </div>
+        <div
+          class="w-20 h-16 sm:w-24 sm:h-24 flex flex-col justify-center items-center border-[3px] border-white rounded-tl-2xl rounded-br-2xl bg-black bg-no-repeat bg-cover overflow-hidden"
+          style="background-image: url(/assets/nav-button-clip.png)"
+        >
+          <span>hours</span>
+          <h4 id="hours">11</h4>
+        </div>
+        <div
+          class="w-20 h-16 sm:w-24 sm:h-24 flex flex-col justify-center items-center border-[3px] border-white rounded-tl-2xl rounded-br-2xl bg-black bg-no-repeat bg-cover overflow-hidden"
+          style="background-image: url(/assets/nav-button-clip.png)"
+        >
+          <span>minutes</span>
+          <h4 id="minutes">21</h4>
+        </div>
+        <div
+          class="w-20 h-16 sm:w-24 sm:h-24 flex flex-col justify-center items-center border-[3px] border-white rounded-tl-2xl rounded-br-2xl bg-black bg-no-repeat bg-cover overflow-hidden"
+          style="background-image: url(/assets/nav-button-clip.png)"
+        >
+          <span>seconds</span>
+          <h4 id="seconds">41</h4>
+        </div>
+      </div>
+    </section>
+
+    <!-- about events section  -->
+    <section class="relative z-0 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-4 pt-16 md:pt-24 lg:pt-36 pb-12 md:pb-20 lg:pb-24 flex flex-col lg:flex-row justify-center"
+      >
+        <div
+          data-aos="slide-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="false"
+          data-aos-once="true"
+          class="w-full lg:w-1/2 p-4 space-y-8"
+        >
+          <h3 class="after-line">About The Event</h3>
+          <p>
+            This is a anual event for online comunity, dolor sit amet,
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim minim veniam, quis nostrud
+            exercitat ullamco laboris nisi ut aliquip ex ea.
+          </p>
+          <div
+            class="flex flex-wrap sm:flex-nowrap lg:justify-between sm:space-x-4 items-center"
+          >
+            <ul class="space-y-2">
+              <li class="flex items-center space-x-2">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  version="1.2"
+                  baseProfile="tiny"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-primary"
+                >
+                  <path
+                    d="M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z"
+                  ></path>
+                </svg>
+                <span>Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  version="1.2"
+                  baseProfile="tiny"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-primary"
+                >
+                  <path
+                    d="M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z"
+                  ></path>
+                </svg>
+                <span>Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  version="1.2"
+                  baseProfile="tiny"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-primary"
+                >
+                  <path
+                    d="M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z"
+                  ></path>
+                </svg>
+                <span>Lorem ipsum dolor sit amet</span>
+              </li>
+            </ul>
+            <ul class="space-y-2">
+              <li class="flex items-center space-x-2">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  version="1.2"
+                  baseProfile="tiny"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-primary"
+                >
+                  <path
+                    d="M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z"
+                  ></path>
+                </svg>
+                <span>Consectetur for adipiscing</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  version="1.2"
+                  baseProfile="tiny"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-primary"
+                >
+                  <path
+                    d="M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z"
+                  ></path>
+                </svg>
+                <span>Consectetur for adipiscing</span>
+              </li>
+              <li class="flex items-center space-x-2">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  version="1.2"
+                  baseProfile="tiny"
+                  viewBox="0 0 24 24"
+                  height="24px"
+                  width="24px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-primary"
+                >
+                  <path
+                    d="M16.972 6.251c-.967-.538-2.185-.188-2.72.777l-3.713 6.682-2.125-2.125c-.781-.781-2.047-.781-2.828 0-.781.781-.781 2.047 0 2.828l4 4c.378.379.888.587 1.414.587l.277-.02c.621-.087 1.166-.46 1.471-1.009l5-9c.537-.966.189-2.183-.776-2.72z"
+                  ></path>
+                </svg>
+                <span>Suspendisse viverra mauris eget</span>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap items-center sm:space-x-4 py-4">
+            <a
+              href="#"
+              class="pulse w-40 m-2 sm:m-0 text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 px-8 rounded-full font-bold active:-translate-y-1 transition-all duration-300 capitalize"
+            >
+              Learn More
+            </a>
+            <a
+              href="#"
+              class="pulse w-40 m-2 sm:m-0 text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 px-8 rounded-full font-bold active:-translate-y-1 transition-all duration-300 capitalize"
+            >
+              Watch Video
+            </a>
+          </div>
+        </div>
+        <div
+          data-aos="slide-left"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="false"
+          data-aos-once="true"
+          class="w-full lg:w-1/2 px-4 flex flex-wrap justify-center lg:justify-end text-white"
+        >
+          <a
+            href="#"
+            class="relative flex w-64 lg:w-52 xl:w-64 h-48 lg:h-44 xl:h-48 m-3 rounded-3xl hover:shadow-xl hover:shadow-gray-500 transition-all duration-300 overflow-hidden"
+          >
+            <img src="/assets/conference/1-500.webp" alt="conference 1" />
+            <div
+              class="absolute z-10 bottom-0 w-full flex flex-col items-center p-4 font-bold"
+            >
+              <div>
+                <p>Special Speaker for newbe</p>
+                <span class="text-xs">1st Season</span>
+              </div>
+            </div>
+            <!-- filter layer  -->
+            <div
+              class="filter-shadow absolute -bottom-8 -left-[10%] w-[120%] h-2/3 bg-gradient-to-tr from-secondary to-primary blur-xl opacity-95"
+            ></div>
+          </a>
+          <a
+            href="#"
+            class="relative flex w-64 lg:w-52 xl:w-64 h-48 lg:h-44 xl:h-48 m-3 rounded-3xl hover:shadow-xl hover:shadow-gray-500 transition-all duration-300 overflow-hidden"
+          >
+            <img src="/assets/conference/2-500.webp" alt="conference 1" />
+            <div
+              class="absolute z-10 bottom-0 w-full flex flex-col items-center p-4 font-bold"
+            >
+              <div>
+                <p>Special Speaker for newbe</p>
+                <span class="text-xs">1st Season</span>
+              </div>
+            </div>
+            <!-- filter layer  -->
+            <div
+              class="filter-shadow absolute -bottom-8 -left-[10%] w-[120%] h-2/3 bg-gradient-to-tr from-secondary to-primary blur-xl opacity-95"
+            ></div>
+          </a>
+          <a
+            href="#"
+            class="relative flex w-64 lg:w-52 xl:w-64 h-48 lg:h-44 xl:h-48 m-3 rounded-3xl hover:shadow-xl hover:shadow-gray-500 transition-all duration-300 overflow-hidden"
+          >
+            <img src="/assets/conference/3-500.webp" alt="conference 1" />
+            <div
+              class="absolute z-10 bottom-0 w-full flex flex-col items-center p-4 font-bold"
+            >
+              <div>
+                <p>Special Speaker for newbe</p>
+                <span class="text-xs">1st Season</span>
+              </div>
+            </div>
+            <!-- filter layer  -->
+            <div
+              class="filter-shadow absolute -bottom-8 -left-[10%] w-[120%] h-2/3 bg-gradient-to-tr from-secondary to-primary blur-xl opacity-95"
+            ></div>
+          </a>
+          <a
+            href="#"
+            class="relative flex w-64 lg:w-52 xl:w-64 h-48 lg:h-44 xl:h-48 m-3 rounded-3xl hover:shadow-xl hover:shadow-gray-500 transition-all duration-300 overflow-hidden"
+          >
+            <img src="/assets/conference/4-500.webp" alt="conference 1" />
+            <div
+              class="absolute z-10 bottom-0 w-full flex flex-col items-center p-4 font-bold"
+            >
+              <div>
+                <p>Special Speaker for newbe</p>
+                <span class="text-xs">1st Season</span>
+              </div>
+            </div>
+            <!-- filter layer  -->
+            <div
+              class="filter-shadow absolute -bottom-8 -left-[10%] w-[120%] h-2/3 bg-gradient-to-tr from-secondary to-primary blur-xl opacity-95"
+            ></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Gallery  -->
+    <section class="relative z-0">
+      <div
+        class="max-w-7xl mx-auto px-4 py-12 lg:py-20 flex flex-col items-center text-center"
+      >
+        <div class="space-y-8 flex flex-col items-center">
+          <h3 class="after-line max-w-max">Event Gallery</h3>
+          <p>
+            Our Honorable spekar, who speak for you, i think whos every speach
+            are equal gold
+          </p>
+        </div>
+        <div
+          data-aos="slide-up"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="false"
+          data-aos-once="true"
+          class="w-full grid grid-rows-3 sm:grid-rows-2 grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-8 pt-12 lg:pt-20"
+        >
+          <a
+            href="#"
+            class="relative z-0 col-start-1 col-end-2 flex h-[140px] md:h-[180px] lg:h-[240px] xl:h-[270px] overflow-hidden"
+          >
+            <img
+              src="/assets/humans/1-500.webp"
+              alt=""
+              width="100%"
+              height="100%"
+            />
+            <!-- serch icon hover show  -->
+            <div
+              class="absolute z-10 w-full h-full flex justify-center items-center bg-primary text-white hover:opacity-80 transition-all duration-500 opacity-0"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="36px"
+                width="36px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                ></path>
+              </svg>
+              <div
+                class="absolute bottom-4 right-6 font-bold text-right px-4 border-r-2 border-white"
+              >
+                <p>Main Speaker Speaking</p>
+                <span class="text-xs">Awesome Event 2023</span>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            class="relative z-0 col-start-1 col-end-2 sm:col-start-2 sm:col-end-3 row-start-2 row-end-3 sm:row-start-1 sm:row-end-2 flex h-[140px] md:h-[180px] lg:h-[240px] xl:h-[270px] overflow-hidden"
+          >
+            <img
+              src="/assets/humans/4.webp"
+              alt=""
+              width="100%"
+              height="100%"
+            />
+            <!-- serch icon hover show  -->
+            <div
+              class="absolute z-10 w-full h-full flex justify-center items-center bg-primary text-white hover:opacity-80 transition-all duration-500 opacity-0"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="36px"
+                width="36px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                ></path>
+              </svg>
+              <div
+                class="absolute bottom-4 right-6 font-bold text-right px-4 border-r-2 border-white"
+              >
+                <p>Main Speaker Speaking</p>
+                <span class="text-xs">Awesome Event 2023</span>
+              </div>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="relative z-0 col-start-1 col-end-3 sm:col-start-1 sm:col-end-3 row-start-3 row-end-4 sm:row-start-2 sm:row-end-3 flex h-[140px] md:h-[180px] lg:h-[240px] xl:h-[270px]"
+          >
+            <img
+              src="/assets/humans/1-720x300.webp"
+              alt=""
+              width="100%"
+              height="100%"
+            />
+            <!-- serch icon hover show  -->
+            <div
+              class="absolute z-10 w-full h-full flex justify-center items-center bg-primary text-white hover:opacity-80 transition-all duration-500 opacity-0"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="36px"
+                width="36px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                ></path>
+              </svg>
+              <div
+                class="absolute bottom-4 right-6 font-bold text-right px-4 border-r-2 border-white"
+              >
+                <p>Main Speaker Speaking</p>
+                <span class="text-xs">Awesome Event 2023</span>
+              </div>
+            </div>
+          </a>
+          <div
+            class="relative z-0 col-start-2 col-end-3 sm:col-start-3 sm:col-end-4 row-start-1 row-end-3 flex h-[296px] md:h-[376px] lg:h-[512px] xl:h-[572px]"
+          >
+            <img
+              src="/assets/humans/3v-500.webp"
+              alt=""
+              width="100%"
+              height="100%"
+            />
+            <!-- serch icon hover show  -->
+            <div
+              class="absolute z-10 w-full h-full flex justify-center items-center bg-primary text-white hover:opacity-80 transition-all duration-500 opacity-0"
+            >
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 512 512"
+                height="36px"
+                width="36px"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M304 192v32c0 6.6-5.4 12-12 12h-56v56c0 6.6-5.4 12-12 12h-32c-6.6 0-12-5.4-12-12v-56h-56c-6.6 0-12-5.4-12-12v-32c0-6.6 5.4-12 12-12h56v-56c0-6.6 5.4-12 12-12h32c6.6 0 12 5.4 12 12v56h56c6.6 0 12 5.4 12 12zm201 284.7L476.7 505c-9.4 9.4-24.6 9.4-33.9 0L343 405.3c-4.5-4.5-7-10.6-7-17V372c-35.3 27.6-79.7 44-128 44C93.1 416 0 322.9 0 208S93.1 0 208 0s208 93.1 208 208c0 48.3-16.4 92.7-44 128h16.3c6.4 0 12.5 2.5 17 7l99.7 99.7c9.3 9.4 9.3 24.6 0 34zM344 208c0-75.2-60.8-136-136-136S72 132.8 72 208s60.8 136 136 136 136-60.8 136-136z"
+                ></path>
+              </svg>
+              <div
+                class="absolute bottom-4 right-6 font-bold text-right px-4 border-r-2 border-white"
+              >
+                <p>Main Speaker Speaking</p>
+                <span class="text-xs">Awesome Event 2023</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- shedule steps section  -->
+    <section
+      class="relative z-10 w-full bg-gray-500 bg-no-repeat bg-cover text-white py-12 lg:py-20"
+      style="background-image: url(/assets/conference/1-1600.webp)"
+    >
+      <div
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="false"
+        data-aos-once="true"
+        class="max-w-7xl mx-auto w-full h-full p-4 flex flex-col space-y-16"
+      >
+        <div class="space-y-8 flex flex-col items-center text-center">
+          <h3 class="after-line max-w-max">Event Schedule</h3>
+          <p>
+            Our Honorable spekar, who speak for you, i think whos every speach
+            are equal gold
+          </p>
+        </div>
+        <div
+          class="relative z-0 flex flex-col sm:flex-row justify-center items-center uppercase text-sm space-y-2 sm:space-y-0 sm:space-x-16 lg:space-x-36"
+        >
+          <div
+            class="w-40 cursor-pointer text-black hover:text-white bg-white hover:bg-gradient-to-tr hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300"
+          >
+            first DAY
+          </div>
+          <div
+            class="w-40 cursor-pointer text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300"
+          >
+            SECOND DAY
+          </div>
+          <div
+            class="w-40 cursor-pointer text-black hover:text-white bg-white hover:bg-gradient-to-tr hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300"
+          >
+            Third DAY
+          </div>
+          <!-- line  -->
+          <div
+            class="absolute -z-10 hidden sm:block sm:w-[350px] lg:w-[600px] h-0.5 bg-white"
+          ></div>
+        </div>
+
+        <div class="flex flex-col justify-center items-center">
+          <a
+            href="#"
+            class="w-40 cursor-pointer text-white text-sm bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300"
+          >
+            1ST HALF
+          </a>
+          <div
+            class="relative flex flex-col justify-center py-4 sm:py-0 space-y-4 sm:space-y-0 w-11/12 sm:w-0.5 sm:h-[950px] lg:h-[650px] sm:bg-white"
+          >
+            <!-- right -->
+            <div class="sm:absolute z-0 left-8 top-8 sm:w-64 lg:w-[460px]">
+              <div
+                class="relative z-10 p-4 bg-gradient-to-t from-secondary to-primary rounded-md flex items-center justify-center space-x-4"
+              >
+                <div class="min-w-[64px] h-16 rounded-md flex overflow-hidden">
+                  <img
+                    src="/assets/humans/1-500.webp"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h6 class="uppercase pb-2">VICE PRESIDENT</h6>
+                  <p>
+                    Raw denim you probably haven't heard of them jean shorts
+                    Austin. Nesciunt tofu stumptown
+                  </p>
+                </div>
+              </div>
+              <div
+                class="hidden sm:block absolute -z-10 bottom-0 -left-10 w-16"
+              >
+                <p class="absolute font-bold -left-16 -top-1 capitalize">
+                  april
+                </p>
+                <div
+                  class="absolute -left-1 -top-1 w-6 h-6 rounded-full bg-white border-4 border-primary"
+                ></div>
+                <svg
+                  class="text-primary"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 55.017 76.009"
+                >
+                  <path
+                    id="rect"
+                    d="M962.359,3422.987l50.87,32.6a3.5,3.5,0,0,1,1.591,4.071L995.87,3498.7c-.408.772-1.422-.039-2.238-1.741l-33.6-70.042a.2.2,0,0,1,.027-.223l2.109-3.52C962.224,3423.039,962.31,3422.955,962.359,3422.987Z"
+                    transform="translate(-960.009 -3422.98)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <!-- left  -->
+            <div
+              class="sm:absolute z-0 -left-[288px] lg:-left-[490px] top-[220px] lg:top-[170px] sm:w-64 lg:w-[460px]"
+            >
+              <div
+                class="relative z-10 p-4 bg-gradient-to-t from-secondary to-primary rounded-md flex items-center justify-center space-x-4"
+              >
+                <div class="min-w-[64px] h-16 rounded-md flex overflow-hidden">
+                  <img
+                    src="/assets/humans/2-500.webp"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h6 class="uppercase pb-2">KOMA MAL</h6>
+                  <p>
+                    Raw denim you probably haven't heard of them jean shorts
+                    Austin. Nesciunt tofu stumptown
+                  </p>
+                </div>
+              </div>
+              <div
+                class="hidden sm:block absolute -z-10 bottom-0 -right-10 w-16"
+              >
+                <p class="absolute font-bold -right-16 -top-1 capitalize">
+                  april
+                </p>
+                <div
+                  class="absolute -right-1 -top-1 w-6 h-6 rounded-full bg-white border-4 border-primary"
+                ></div>
+                <svg
+                  class="text-primary"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 54.955 76.478"
+                >
+                  <path
+                    id="rect"
+                    d="M954.737,3558.425l-50.812,32.8a3.531,3.531,0,0,0-1.589,4.1l18.928,39.282c.408.776,1.42-.039,2.236-1.752l33.562-70.473a.2.2,0,0,0-.027-.225l-2.107-3.542C954.872,3558.476,954.786,3558.393,954.737,3558.425Z"
+                    transform="translate(-902.129 -3558.418)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="pt-4 sm:pt w-full flex justify-center items-center">
+              <a
+                href="#"
+                class="sm:mt-0 sm:absolute top-[450px] lg:top-[310px] -left-20 w-40 text-sm cursor-pointer text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300"
+              >
+                2ND HALF
+              </a>
+            </div>
+            <!-- right -->
+            <div
+              class="sm:absolute z-0 left-8 top-[530px] lg:top-[380px] sm:w-64 lg:w-[460px]"
+            >
+              <div
+                class="relative z-10 p-4 bg-gradient-to-t from-secondary to-primary rounded-md flex items-center justify-center space-x-4"
+              >
+                <div class="min-w-[64px] h-16 rounded-md flex overflow-hidden">
+                  <img
+                    src="/assets/humans/1-500.webp"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h6 class="uppercase pb-2">VICE PRESIDENT</h6>
+                  <p>
+                    Raw denim you probably haven't heard of them jean shorts
+                    Austin. Nesciunt tofu stumptown
+                  </p>
+                </div>
+              </div>
+              <div
+                class="hidden sm:block absolute -z-10 bottom-0 -left-10 w-16"
+              >
+                <p class="absolute font-bold right-20 -top-1 capitalize">
+                  january
+                </p>
+                <div
+                  class="absolute -left-1 -top-1 w-6 h-6 rounded-full bg-white border-4 border-primary"
+                ></div>
+                <svg
+                  class="text-primary"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 55.017 76.009"
+                >
+                  <path
+                    id="rect"
+                    d="M962.359,3422.987l50.87,32.6a3.5,3.5,0,0,1,1.591,4.071L995.87,3498.7c-.408.772-1.422-.039-2.238-1.741l-33.6-70.042a.2.2,0,0,1,.027-.223l2.109-3.52C962.224,3423.039,962.31,3422.955,962.359,3422.987Z"
+                    transform="translate(-960.009 -3422.98)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+            <!-- left  -->
+            <div
+              class="sm:absolute z-0 -left-[288px] lg:-left-[490px] top-[720px] lg:top-[510px] sm:w-64 lg:w-[460px]"
+            >
+              <div
+                class="relative z-10 p-4 bg-gradient-to-t from-secondary to-primary rounded-md flex items-center justify-center space-x-4"
+              >
+                <div class="min-w-[64px] h-16 rounded-md flex overflow-hidden">
+                  <img
+                    src="/assets/humans/2-500.webp"
+                    width="100%"
+                    height="100%"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <h6 class="uppercase pb-2">KOMA MAL</h6>
+                  <p>
+                    Raw denim you probably haven't heard of them jean shorts
+                    Austin. Nesciunt tofu stumptown
+                  </p>
+                </div>
+              </div>
+              <div
+                class="hidden sm:block absolute -z-10 bottom-0 -right-10 w-16"
+              >
+                <p class="absolute font-bold -right-16 -top-1 capitalize">
+                  March
+                </p>
+                <div
+                  class="absolute -right-1 -top-1 w-6 h-6 rounded-full bg-white border-4 border-primary"
+                ></div>
+                <svg
+                  class="text-primary"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 54.955 76.478"
+                >
+                  <path
+                    id="rect"
+                    d="M954.737,3558.425l-50.812,32.8a3.531,3.531,0,0,0-1.589,4.1l18.928,39.282c.408.776,1.42-.039,2.236-1.752l33.562-70.473a.2.2,0,0,0-.027-.225l-2.107-3.542C954.872,3558.476,954.786,3558.393,954.737,3558.425Z"
+                    transform="translate(-902.129 -3558.418)"
+                    fill="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <a
+            href="#"
+            class="w-40 cursor-pointer text-white text-sm bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300"
+          >
+            MORE
+          </a>
+        </div>
+      </div>
+      <!-- layout gray  -->
+      <div
+        class="absolute top-0 left-0 -z-10 w-full h-full bg-black opacity-90"
+      ></div>
+    </section>
+
+    <!-- Event speaker  -->
+    <section class="relative z-0 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-4 py-12 lg:py-20 flex flex-col items-center text-center"
+      >
+        <div class="space-y-8 flex flex-col items-center pb-10 lg:pb-16">
+          <h3 class="after-line max-w-max">Event Speaker</h3>
+          <p>
+            Our Honorable spekar, who speak for you, i think whos every speach
+            are equal gold
+          </p>
+        </div>
+        <!-- cards  -->
+        <div
+          data-aos="flip-left"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          data-aos-mirror="false"
+          data-aos-once="true"
+          class="speaker-cards flex flex-wrap items-center justify-center"
+        >
+          <!-- card  -->
+          <div
+            class="speaker-card sm:order-1 lg:order-none flex flex-col sm:flex-row items-center px sm:w-[490px] xl:w-[600px] sm:h-[210px] xl:h-[280px] bg-black transition-all duration-300"
+          >
+            <div
+              class="speaker-card-image flex w-full sm:w-1/2 h-full duration-300"
+            >
+              <img
+                src="/assets/speaker/1-500.webp"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+            <div class="relative z-0 w-full sm:w-1/2 h-full">
+              <!-- arrow  -->
+              <div
+                class="speaker-card-body-arrow hidden sm:block duration-300 absolute -z-10 top-8 -left-2 w-4 h-4 bg-slate-200 rotate-45"
+              ></div>
+              <div
+                class="speaker-card-body bg-slate-200 w-full h-full flex flex-col justify-center space-y-4 text-start p-8 font-bold"
+              >
+                <h5 class="text-2xl">Elizabeth Jones</h5>
+                <p>Art Director</p>
+                <div
+                  class="speaker-card-border-bottom w-16 h-0.5 bg-gray-400"
+                ></div>
+                <!-- social icons -->
+                <div
+                  class="speaker-card-body-icons flex items-center space-x-3"
+                >
+                  <!-- facebook -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 320 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- twitter -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- vimeo -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- youtube -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card  -->
+          <div
+            class="speaker-card sm:order-3 lg:order-none flex flex-col sm:flex-row items-center px sm:w-[490px] xl:w-[600px] sm:h-[210px] xl:h-[280px] bg-black transition-all duration-300"
+          >
+            <div
+              class="speaker-card-image flex w-full sm:w-1/2 h-full duration-300"
+            >
+              <img
+                src="/assets/speaker/2-500.webp"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+            <div class="relative z-0 w-full sm:w-1/2 h-full">
+              <!-- arrow  -->
+              <div
+                class="speaker-card-body-arrow hidden sm:block duration-300 absolute -z-10 top-8 -left-2 w-4 h-4 bg-slate-200 rotate-45"
+              ></div>
+              <div
+                class="speaker-card-body bg-slate-200 w-full h-full flex flex-col justify-center space-y-4 text-start p-8 font-bold"
+              >
+                <h5 class="text-2xl">Elizabeth Jones</h5>
+                <p>Art Director</p>
+                <div
+                  class="speaker-card-border-bottom w-16 h-0.5 bg-gray-400"
+                ></div>
+                <!-- social icons -->
+                <div
+                  class="speaker-card-body-icons flex items-center space-x-3"
+                >
+                  <!-- facebook -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 320 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- twitter -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- vimeo -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- youtube -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card  -->
+          <div
+            class="speaker-card sm:order-2 lg:order-none flex flex-col sm:flex-row items-center px sm:w-[490px] xl:w-[600px] sm:h-[210px] xl:h-[280px] bg-black transition-all duration-300"
+          >
+            <div
+              class="speaker-card-image flex w-full sm:w-1/2 h-full duration-300 sm:order-2"
+            >
+              <img
+                src="/assets/speaker/3-500.webp"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+            <div class="relative z-0 w-full sm:w-1/2 h-full sm:order-1">
+              <!-- arrow  -->
+              <div
+                class="speaker-card-body-arrow hidden sm:block duration-300 absolute -z-10 top-8 -right-2 w-4 h-4 bg-slate-200 rotate-45"
+              ></div>
+              <div
+                class="speaker-card-body bg-slate-200 w-full h-full flex flex-col justify-center sm:items-end space-y-4 text-start p-8 font-bold"
+              >
+                <h5 class="text-2xl">Elizabeth Jones</h5>
+                <p>Art Director</p>
+                <div
+                  class="speaker-card-border-bottom w-16 h-0.5 bg-gray-400"
+                ></div>
+                <!-- social icons -->
+                <div
+                  class="speaker-card-body-icons flex items-center space-x-3"
+                >
+                  <!-- facebook -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 320 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- twitter -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- vimeo -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- youtube -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card  -->
+          <div
+            class="speaker-card sm:order-4 lg:order-none flex flex-col sm:flex-row items-center px sm:w-[490px] xl:w-[600px] sm:h-[210px] xl:h-[280px] bg-black transition-all duration-300"
+          >
+            <div
+              class="speaker-card-image flex w-full sm:w-1/2 h-full duration-300 sm:order-2"
+            >
+              <img
+                src="/assets/speaker/4-500.webp"
+                width="100%"
+                height="100%"
+                alt=""
+              />
+            </div>
+            <div class="relative z-0 w-full sm:w-1/2 h-full sm:order-1">
+              <!-- arrow  -->
+              <div
+                class="speaker-card-body-arrow hidden sm:block duration-300 absolute -z-10 top-8 -right-2 w-4 h-4 bg-slate-200 rotate-45"
+              ></div>
+              <div
+                class="speaker-card-body bg-slate-200 w-full h-full flex flex-col justify-center sm:items-end space-y-4 text-start p-8 font-bold"
+              >
+                <h5 class="text-2xl">Elizabeth Jones</h5>
+                <p>Art Director</p>
+                <div
+                  class="speaker-card-border-bottom w-16 h-0.5 bg-gray-400"
+                ></div>
+                <!-- social icons -->
+                <div
+                  class="speaker-card-body-icons flex items-center space-x-3"
+                >
+                  <!-- facebook -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 320 512"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- twitter -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- vimeo -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 16 16"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"
+                      ></path>
+                    </svg>
+                  </a>
+                  <!-- youtube -->
+                  <a
+                    href="#"
+                    class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+                  >
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- event pricing  -->
+    <section
+      class="relative z-10 w-full bg-gray-500 bg-no-repeat bg-cover text-white py-12 lg:py-20"
+      style="background-image: url(/assets/conference/1-1600.webp)"
+    >
+      <div class="max-w-7xl mx-auto w-full h-full p-4 flex flex-col space-y-16">
+        <div class="space-y-8 flex flex-col items-center text-center">
+          <h3 class="after-line max-w-max">Event Pricing</h3>
+          <p>
+            Our Honorable spekar, who speak for you, i think whos every speach
+            are equal gold
+          </p>
+        </div>
+        <!-- cards  -->
+        <div
+          class="w-full flex flex-col md:flex-row justify-center items-center md:space-x-8"
+        >
+          <!-- card  -->
+          <div
+            data-aos="flip-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="relative w-full md:w-1/3 z-0 m-4 px-4 py-12"
+          >
+            <div
+              class="w-full flex flex-col justify-center items-center text-center space-y-10"
+            >
+              <h1 class="font-normal opacity-90">$0.00</h1>
+              <div>
+                <h3
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary"
+                >
+                  FREE
+                </h3>
+                <span class="text-xs">for individuals</span>
+              </div>
+              <ul class="text-center">
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  Only 1 User uses
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  10 Projects for individuals
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  5GB of Storage + Unlimited Bandwitch
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  Unlimited Data
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  Fully Security Suite
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="pulse w-40 block cursor-pointer text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300 uppercase"
+              >
+                buy now
+              </a>
+            </div>
+            <!-- white layout -->
+            <div
+              class="absolute top-0 left-0 -z-10 w-full h-full bg-white opacity-10"
+            ></div>
+          </div>
+          <!-- card  -->
+          <div
+            data-aos="flip-down"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="relative w-full md:w-1/3 z-0 m-4 px-4 py-12"
+          >
+            <div
+              class="w-full flex flex-col justify-center items-center text-center space-y-10"
+            >
+              <h1 class="font-normal opacity-90 text-black">$9.99</h1>
+              <div>
+                <h3 class="opacity-90">STANDARD</h3>
+                <span class="text-xs">for Start-Ups</span>
+              </div>
+              <ul class="text-center">
+                <li class="p-3 border-b border-gray-300 opacity-90">5 Users</li>
+                <li class="p-3 border-b border-gray-300 opacity-90">
+                  50 Projects for Start-Ups
+                </li>
+                <li class="p-3 border-b border-gray-300 opacity-90">
+                  50GB of Storage + Unlimited Bandwitch
+                </li>
+                <li class="p-3 border-b border-gray-300 opacity-90">
+                  Unlimited Data
+                </li>
+                <li class="p-3 border-b border-gray-300 opacity-90">
+                  Fully Security Suite
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="pulse-white w-40 block cursor-pointer text-primary bg-white hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300 uppercase"
+              >
+                buy now
+              </a>
+            </div>
+            <!-- gradiant layout -->
+            <div
+              class="absolute top-0 left-0 -z-10 w-full h-full bg-gradient-to-t from-primary to-secondary"
+            ></div>
+          </div>
+          <!-- card  -->
+          <div
+            data-aos="flip-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="true"
+            class="relative w-full md:w-1/3 z-0 m-4 px-4 py-12"
+          >
+            <div
+              class="w-full flex flex-col justify-center items-center text-center space-y-10"
+            >
+              <h1 class="font-normal opacity-90">$0.00</h1>
+              <div>
+                <h3
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-primary"
+                >
+                  FREE
+                </h3>
+                <span class="text-xs">for individuals</span>
+              </div>
+              <ul class="text-center">
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  Only 1 User uses
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  10 Projects for individuals
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  5GB of Storage + Unlimited Bandwitch
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  Unlimited Data
+                </li>
+                <li class="p-3 border-b border-gray-500 opacity-90">
+                  Fully Security Suite
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="pulse w-40 block cursor-pointer text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300 uppercase"
+              >
+                buy now
+              </a>
+            </div>
+            <!-- white layout -->
+            <div
+              class="absolute top-0 left-0 -z-10 w-full h-full bg-white opacity-10"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <!-- layout gray  -->
+      <div
+        class="absolute top-0 left-0 -z-10 w-full h-full bg-black opacity-90"
+      ></div>
+    </section>
+
+    <!-- contact section  -->
+    <section class="relative z-0">
+      <div
+        data-aos="fade-in"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="true"
+        class="max-w-7xl mx-auto px-4 py-12 lg:py-20 flex flex-col items-center text-center"
+      >
+        <div class="space-y-8 flex flex-col items-center pb-10 lg:pb-16">
+          <h3 class="after-line max-w-max">Contact Us</h3>
+          <p>
+            Our Honorable spekar, who speak for you, i think whos every speach
+            are equal gold
+          </p>
+        </div>
+        <div
+          class="flex flex-col md:flex-row justify-between w-full space-y-16 md:space-y-0"
+        >
+          <div class="w-full md:w-1/3">
+            <form action="#" method="POST" class="space-y-4">
+              <!-- name  -->
+              <div class="relative">
+                <div class="absolute left-4 top-4 text-gray-400">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 512 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  class="form-control block w-full px-4 pl-12 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary focus:outline-none"
+                  id="exampleFormControlInput2"
+                  placeholder="Name"
+                />
+              </div>
+              <!-- email  -->
+              <div class="relative">
+                <div class="absolute left-4 top-4 text-gray-400">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  class="form-control block w-full px-4 pl-12 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary focus:outline-none"
+                  id="exampleFormControlInput2"
+                  placeholder="Email Address"
+                />
+              </div>
+              <!-- subject  -->
+              <div class="relative">
+                <div class="absolute left-4 top-4 text-gray-400">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 576 512"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M402.6 83.2l90.2 90.2c3.8 3.8 3.8 10 0 13.8L274.4 405.6l-92.8 10.3c-12.4 1.4-22.9-9.1-21.5-21.5l10.3-92.8L388.8 83.2c3.8-3.8 10-3.8 13.8 0zm162-22.9l-48.8-48.8c-15.2-15.2-39.9-15.2-55.2 0l-35.4 35.4c-3.8 3.8-3.8 10 0 13.8l90.2 90.2c3.8 3.8 10 3.8 13.8 0l35.4-35.4c15.2-15.3 15.2-40 0-55.2zM384 346.2V448H64V128h229.8c3.2 0 6.2-1.3 8.5-3.5l40-40c7.6-7.6 2.2-20.5-8.5-20.5H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V306.2c0-10.7-12.9-16-20.5-8.5l-40 40c-2.2 2.3-3.5 5.3-3.5 8.5z"
+                    ></path>
+                  </svg>
+                </div>
+                <input
+                  type="text"
+                  class="form-control block w-full px-4 pl-12 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary focus:outline-none"
+                  id="exampleFormControlInput2"
+                  placeholder="Subject"
+                />
+              </div>
+              <textarea
+                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary focus:outline-none"
+                id="exampleFormControlTextarea1"
+                rows="8"
+                placeholder="type your message here"
+              ></textarea>
+              <button
+                type="submit"
+                class="pulse block cursor-pointer text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary px-8 py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300 uppercase"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div class="w-full md:w-1/3 text-start px-8 space-y-6">
+            <h5>Contact Details</h5>
+            <!-- contact icons  -->
+            <div class="space-y-3">
+              <div class="flex space-x-2">
+                <div class="text-primary pt-2">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    version="1.1"
+                    viewBox="0 0 16 16"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M8 0c-2.761 0-5 2.239-5 5 0 5 5 11 5 11s5-6 5-11c0-2.761-2.239-5-5-5zM8 8c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"
+                    ></path>
+                  </svg>
+                </div>
+                <p>
+                  Level 13, 2 Elizabeth St, Melbourne, Victoria 3000, Australia
+                </p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="text-primary">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"
+                    ></path>
+                  </svg>
+                </div>
+                <p>1800 452 308</p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="text-primary">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 16 16"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM12.5 1a.5.5 0 0 1 .5.5V3h1.5a.5.5 0 0 1 0 1H13v1.5a.5.5 0 0 1-1 0V4h-1.5a.5.5 0 0 1 0-1H12V1.5a.5.5 0 0 1 .5-.5z"
+                    ></path>
+                  </svg>
+                </div>
+                <p>+61 (8) 8234 3555</p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="text-primary">
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76"
+                    ></path>
+                  </svg>
+                </div>
+                <p>hello@spiritapp.com</p>
+              </div>
+              <div class="flex items-center space-x-2">
+                <div class="text-primary">
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"
+                    ></path>
+                  </svg>
+                </div>
+                <p>www.spiritapp.com</p>
+              </div>
+            </div>
+            <!-- social icons -->
+            <div class="speaker-card-body-icons flex items-center space-x-3">
+              <!-- facebook -->
+              <a
+                href="#"
+                class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 320 512"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                  ></path>
+                </svg>
+              </a>
+              <!-- twitter -->
+              <a
+                href="#"
+                class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                  ></path>
+                </svg>
+              </a>
+              <!-- vimeo -->
+              <a
+                href="#"
+                class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 16 16"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15.992 4.204c-.071 1.556-1.158 3.687-3.262 6.393-2.175 2.829-4.016 4.243-5.522 4.243-.933 0-1.722-.861-2.367-2.583L3.55 7.523C3.07 5.8 2.556 4.94 2.007 4.94c-.118 0-.537.253-1.254.754L0 4.724a209.56 209.56 0 0 0 2.334-2.081c1.054-.91 1.845-1.388 2.373-1.437 1.243-.123 2.01.728 2.298 2.553.31 1.968.526 3.19.646 3.666.36 1.631.756 2.446 1.186 2.445.334 0 .836-.53 1.508-1.587.671-1.058 1.03-1.863 1.077-2.415.096-.913-.263-1.37-1.077-1.37a3.022 3.022 0 0 0-1.185.261c.789-2.573 2.291-3.825 4.508-3.756 1.644.05 2.419 1.117 2.324 3.2z"
+                  ></path>
+                </svg>
+              </a>
+              <!-- youtube -->
+              <a
+                href="#"
+                class="w-4 h-4 flex justify-center items-center hover:-translate-y-1"
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M941.3 296.1a112.3 112.3 0 0 0-79.2-79.3C792.2 198 512 198 512 198s-280.2 0-350.1 18.7A112.12 112.12 0 0 0 82.7 296C64 366 64 512 64 512s0 146 18.7 215.9c10.3 38.6 40.7 69 79.2 79.3C231.8 826 512 826 512 826s280.2 0 350.1-18.8c38.6-10.3 68.9-40.7 79.2-79.3C960 658 960 512 960 512s0-146-18.7-215.9zM423 646V378l232 133-232 135z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="w-full md:w-1/3">
+            <img src="/assets/map.webp" width="100%" height="100%" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer  section -->
+    <footer class="relative z-10 w-full bg-ternary text-white py-12 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col">
+        <div
+          class="w-full flex flex-wrap lg:flex-nowrap justify-between items-start lg:space-x-8"
+        >
+          <div class="w-full sm:w-[46%] lg:w-[30%]">
+            <div class="space-y-8">
+              <h5 class="opacity-90">NEWSLETTER</h5>
+              <span class="opacity-80">Follow our newest </span>
+              <form action="#" class="space-y-8">
+                <!-- email  -->
+                <div class="relative">
+                  <div class="absolute left-4 top-4 text-gray-400">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control block w-full px-4 pl-12 py-2 text-xl font-normal text-gray-700 bg-transparent bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-primary focus:outline-none"
+                    id="exampleFormControlInput2"
+                    placeholder="Email Address"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="pulse block cursor-pointer text-white bg-gradient-to-tr from-secondary to-primary hover:from-primary hover:to-secondary px-8 py-3 text-center rounded-md font-bold active:-translate-y-1 transition-all duration-300 uppercase"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </div>
+          <div
+            class="w-full sm:w-[46%] lg:w-[40%] pt-12 lg:pt-0 flex justify-between items-center space-x-4"
+          >
+            <div class="w-1/3 opacity-90 space-y-8">
+              <h5>SERVICES</h5>
+              <ul class="space-y-4">
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Graphic Design</a></li>
+                <li><a href="#">Illustration</a></li>
+                <li><a href="#">Branding</a></li>
+              </ul>
+            </div>
+            <div class="w-1/3 opacity-90 space-y-8">
+              <h5>COMPANY</h5>
+              <ul class="space-y-4">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Knowledgae base</a></li>
+                <li><a href="#">GStory</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="w-1/3 opacity-90 space-y-8">
+              <h5>SERVICES</h5>
+              <ul class="space-y-4">
+                <li><a href="#">Web Design</a></li>
+                <li><a href="#">Development</a></li>
+                <li><a href="#">Graphic Design</a></li>
+                <li><a href="#">Illustration</a></li>
+                <li><a href="#">Branding</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="w-full lg:w-[30%] space-y-8 pt-12 lg:pt-0">
+            <h5 class="opacity-90 uppercase">Follow Us</h5>
+            <div class="w-full grid grid-cols-3 grid-rows-2 gap-2">
+              <div class="rounded-md h-28 sm:h-44 lg:h-24 flex overflow-hidden">
+                <img src="/assets/humans/1-500.webp" alt="" />
+              </div>
+              <div class="rounded-md h-28 sm:h-44 lg:h-24 flex overflow-hidden">
+                <img src="/assets/humans/2-500.webp" alt="" />
+              </div>
+              <div class="rounded-md h-28 sm:h-44 lg:h-24 flex overflow-hidden">
+                <img src="/assets/humans/3-500.webp" alt="" />
+              </div>
+              <div class="rounded-md h-28 sm:h-44 lg:h-24 flex overflow-hidden">
+                <img src="/assets/humans/1-500.webp" alt="" />
+              </div>
+              <div class="rounded-md h-28 sm:h-44 lg:h-24 flex overflow-hidden">
+                <img src="/assets/humans/2-500.webp" alt="" />
+              </div>
+              <div class="rounded-md h-28 sm:h-44 lg:h-24 flex overflow-hidden">
+                <img src="/assets/humans/3-500.webp" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- back to top -->
+    <button
+      onclick="Scrollback_topfunc()"
+      id="back-to-top-button"
+      title="Scroll back to top"
+      class="btn text-primary w-12 h-12"
+    >
+      <svg
+        stroke="currentColor"
+        fill="currentColor"
+        stroke-width="0"
+        viewBox="0 0 16 16"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM7.5 6.707 6.354 7.854a.5.5 0 1 1-.708-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707z"
+        ></path>
+      </svg>
+    </button>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
